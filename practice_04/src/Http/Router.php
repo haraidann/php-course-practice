@@ -60,7 +60,7 @@ final class Router
              $uniqueMethods = array_values(array_unique($allowedMethods));
              $allowedHeader = implode(', ', $uniqueMethods);
 
-             throw new HttpError(405, 'method_not_allowed', 'Метод не поддерживается для этого пути', ['Allow' => $allowedHeader]);
+             throw new HttpError(405, 'method_not_allowed', 'Метод не поддерживается для этого пути', [], ['Allow' => $allowedHeader]);
          }
 
          throw new HttpError(404, 'not_found', 'Страница не найдена');
